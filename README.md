@@ -5,4 +5,4 @@ To run:
 
 - **cargo clean**
 - **cargo build**
-- **cargo run --release --bin pNAME_OF_EXECUTABLE** (e.g. **cargo run --release --bin hex-colors**)
+- **cargo run --release --bin NAME_OF_EXECUTABLE** (e.g. **cargo run --release --bin hex-colors**)
