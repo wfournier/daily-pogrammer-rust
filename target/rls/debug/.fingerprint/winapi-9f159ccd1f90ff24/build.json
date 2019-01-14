@@ -1,0 +1,1 @@
+{"rustc":11112747607227175124,"features":"","target":0,"profile":0,"path":0,"deps":[],"local":[{"MtimeBased":[[1547499807,530944200],"build\\winapi-9f159ccd1f90ff24\\output"]},{"EnvBased":["WINAPI_NO_BUNDLED_LIBRARIES",null]},{"EnvBased":["WINAPI_STATIC_NOBUNDLE",null]}],"rustflags":[],"edition":"Edition2015"}
