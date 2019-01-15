@@ -46,7 +46,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn it_works() {
+    fn upc_test() {
         assert_eq!(2, upc(String::from("03600029145")));
         assert_eq!(4, upc(String::from("04210000526")));
         assert_eq!(4, upc(String::from("12345678910")));
