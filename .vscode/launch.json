@@ -36,6 +36,17 @@
       "cwd": "${workspaceFolder}",
       "environment": [],
       "externalConsole": true
+    },
+    {
+      "name": "tally",
+      "type": "cppvsdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/target/debug/tally.exe",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "externalConsole": true
     }
   ]
 }
