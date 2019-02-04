@@ -10,7 +10,9 @@ To run executable:
 To run tests:
 
 **cargo test**  
-OR  
-**cargo test --bin NAME_OF_PROBLEM** (e.g. **cargo test --bin hex-colors**)
+This will run all tests for ALL solutions
 
+OR  
+
+**cargo test --bin NAME_OF_PROBLEM** (e.g. **cargo test --bin hex-colors**)  
 This will run all tests defined in the main.rs file of the solution
