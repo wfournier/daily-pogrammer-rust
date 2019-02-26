@@ -49,15 +49,19 @@ impl HexColor {
     }
 
     fn blend(colors: &Vec<HexColor>) -> HexColor {
+        let (red_sum, green_sum, blue_sum): (f32, f32, f32) =
+            colors.iter().fold((0f32, 0f32, 0f32), |sums, hex| {
+                (
+                    sums.0 + hex.red as f32,
+                    sums.1 + hex.green as f32,
+                    sums.2 + hex.blue as f32,
+                )
+            });
+
         HexColor {
-            red: (colors.iter().fold(0f32, |sum, hex| sum + hex.red as f32) / (colors.len() as f32))
-                .round() as u8,
-            green: (colors.iter().fold(0f32, |sum, hex| sum + hex.green as f32)
-                / (colors.len() as f32))
-                .round() as u8,
-            blue: (colors.iter().fold(0f32, |sum, hex| sum + hex.blue as f32)
-                / (colors.len() as f32))
-                .round() as u8,
+            red: (red_sum / (colors.len() as f32)).round() as u8,
+            green: (green_sum / (colors.len() as f32)).round() as u8,
+            blue: (blue_sum / (colors.len() as f32)).round() as u8,
         }
     }
 }
@@ -94,7 +98,10 @@ mod tests {
 
     #[test]
     fn to_hex_test() {
-        assert_eq!(HexColor::new(255, 99, 71).to_hex_string(), String::from("#FF6347"));
+        assert_eq!(
+            HexColor::new(255, 99, 71).to_hex_string(),
+            String::from("#FF6347")
+        );
         assert_eq!(
             HexColor::new(184, 134, 11).to_hex_string(),
             String::from("#B8860B")
@@ -103,7 +110,10 @@ mod tests {
             HexColor::new(189, 183, 107).to_hex_string(),
             String::from("#BDB76B")
         );
-        assert_eq!(HexColor::new(0, 0, 205).to_hex_string(), String::from("#0000CD"));
+        assert_eq!(
+            HexColor::new(0, 0, 205).to_hex_string(),
+            String::from("#0000CD")
+        );
     }
 
     #[test]
