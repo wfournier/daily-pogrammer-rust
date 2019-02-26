@@ -31,7 +31,7 @@ impl HexColor {
         }
     }
 
-    fn to_hex(&self) -> String {
+    fn to_hex_string(&self) -> String {
         format!(
             "#{}",
             hex::encode_upper(vec![self.red, self.green, self.blue])
@@ -44,7 +44,7 @@ impl HexColor {
             self.red,
             self.green,
             self.blue,
-            self.to_hex()
+            self.to_hex_string()
         )
     }
 
@@ -81,9 +81,9 @@ fn main() {
     let blend = HexColor::blend(&hexes);
     println!(
         "{} + {} + {} = {}",
-        hexes[0].to_hex(),
-        hexes[1].to_hex(),
-        hexes[2].to_hex(),
+        hexes[0].to_hex_string(),
+        hexes[1].to_hex_string(),
+        hexes[2].to_hex_string(),
         blend.to_string()
     );
 }
@@ -94,16 +94,16 @@ mod tests {
 
     #[test]
     fn to_hex_test() {
-        assert_eq!(HexColor::new(255, 99, 71).to_hex(), String::from("#FF6347"));
+        assert_eq!(HexColor::new(255, 99, 71).to_hex_string(), String::from("#FF6347"));
         assert_eq!(
-            HexColor::new(184, 134, 11).to_hex(),
+            HexColor::new(184, 134, 11).to_hex_string(),
             String::from("#B8860B")
         );
         assert_eq!(
-            HexColor::new(189, 183, 107).to_hex(),
+            HexColor::new(189, 183, 107).to_hex_string(),
             String::from("#BDB76B")
         );
-        assert_eq!(HexColor::new(0, 0, 205).to_hex(), String::from("#0000CD"));
+        assert_eq!(HexColor::new(0, 0, 205).to_hex_string(), String::from("#0000CD"));
     }
 
     #[test]
@@ -113,7 +113,7 @@ mod tests {
                 HexColor::from("00", "00", "00"),
                 HexColor::from("77", "88", "99")
             ])
-            .to_hex(),
+            .to_hex_string(),
             String::from("#3C444D")
         );
         assert_eq!(
@@ -122,7 +122,7 @@ mod tests {
                 HexColor::from("FF", "69", "B4"),
                 HexColor::from("B0", "C4", "DE")
             ])
-            .to_hex(),
+            .to_hex_string(),
             String::from("#DCB1D9")
         );
     }
